@@ -1,0 +1,54 @@
+using System;
+
+namespace Aula1_2308_primeiroProjeto
+{
+    class Aula2308
+    {
+        static void Main()
+        {
+            string nome; // Cria uma Variavel 'nome'
+            double x1, y1, x2, y2, x3, y3; // Cria variáveis Double.
+            double dPrin, dSec, determinant;
+
+            Console.Write("Colinearidade entre 3 pontos coordenados \n Digite Seu Nome: "); // Escreve uma linha no terminal, o \n quebra a linha.
+
+            nome = Console.ReadLine(); //faz a leitura no teclado e a adiciona a variavel nome.
+            Console.WriteLine("Olá Sr(a) {0} seja bem vindo!!", nome); // o {0} adiciona uma variavel aquele espaco.
+
+            Console.WriteLine(); //escreve uma linha em branco.
+
+            Console.Write("Considere as cordenadas 'x' e 'y' do 1º ponto \nx: ");
+            x1 = Convert.ToDouble(Console.ReadLine()); //Lê o valor escrito e o converte para o tipo int.
+            Console.Write("y: ");
+            y1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Considere as cordenadas 'x' e 'y' do 2º ponto \nx: ");
+            x2 = Convert.ToDouble(Console.ReadLine()); //Lê o valor escrito e o converte para o tipo int.
+            Console.Write("y: ");
+            y2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Considere as cordenadas 'x' e 'y' do 3º ponto \nx: ");
+            x3 = Convert.ToDouble(Console.ReadLine()); //Lê o valor escrito e o converte para o tipo int.
+            Console.Write("y: ");
+            y3 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Você está checando as colinearidade dos pontos: \n A({0},{1}), B({2},{3}), C({4},{5})", x1, y1, x2, y2, x3, y3);
+            Console.Write("\n Pressione qualquer tecla para Confirmar");
+            Console.ReadLine();
+
+            dPrin = (x1 * y2) + (y1 * x3) + (x2 * y3);
+            dSec = (y1 * x2) + (x1 * y3) + (y2 * x3);
+            determinant = dPrin - dSec;
+
+            if (determinant == 0)
+            {
+                Console.WriteLine("Sim, os pontos são colineares");
+                Console.Read();
+            }
+            else
+            {
+                Console.WriteLine("Não, os pontos não são colineares");
+                Console.Read();
+
+            }
+        }
+    }
+}
