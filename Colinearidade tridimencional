@@ -1,0 +1,111 @@
+using System;
+
+namespace Aula1_2308_primeiroProjeto
+{
+    class Program
+    {
+        static void Main()
+        {
+            string nome; // Cria uma Variavel 'nome'
+            double x1, y1, x2, y2, x3, y3, z1, z2, z3; // Cria variáveis Double.
+            double dPrin, dSec, determinant;
+            string is3d;
+
+            Console.Write("Colinearidade entre 3 pontos coordenados \n Digite Seu Nome: "); // Escreve uma linha no terminal, o \n quebra a linha.
+
+            nome = Console.ReadLine(); //faz a leitura no teclado e a adiciona a variavel nome.
+            Console.WriteLine("Olá Sr(a) {0} seja bem vindo!!", nome); // o {0} adiciona uma variavel aquele espaco.
+
+            Console.WriteLine("\nSeus pontos estão num sistema tridimencional? S/N");
+            is3d = Console.ReadLine();
+
+            Console.Write("Considere as cordenadas 'x', 'y' e 'z' do 1º ponto \nx: ");
+            x1 = Convert.ToDouble(Console.ReadLine()); //Lê o valor escrito e o converte para o tipo int.
+            Console.Write("y: ");
+            y1 = Convert.ToDouble(Console.ReadLine());
+     
+            if(is3d == "S")
+            {
+                Console.Write("z: ");
+                z1 = Convert.ToDouble(Console.ReadLine());
+            }
+            else
+            {
+                z1 = 0;
+            }
+            Console.Write("Considere as cordenadas 'x', 'y' e 'z' do 2º ponto \nx: ");
+            x2 = Convert.ToDouble(Console.ReadLine()); //Lê o valor escrito e o converte para o tipo int.
+            Console.Write("y: ");
+            y2 = Convert.ToDouble(Console.ReadLine());
+            if (is3d == "S")
+            {
+                Console.Write("z: ");
+                z2 = Convert.ToDouble(Console.ReadLine());
+            }
+            else
+            {
+                z2 = 0;
+            }
+            Console.Write("Considere as cordenadas 'x', 'y' e 'z' do 3º ponto \nx: ");
+            x3 = Convert.ToDouble(Console.ReadLine()); //Lê o valor escrito e o converte para o tipo int.
+            Console.Write("y: ");
+            y3 = Convert.ToDouble(Console.ReadLine());
+            if (is3d == "S")
+            {
+                Console.Write("z: ");
+                z3 = Convert.ToDouble(Console.ReadLine());
+            }
+            else
+            {
+                z3 = 0;
+            }
+            //faremos o calculo do determinante agora para definir a colinearidade
+            //primeiramente se o plano for tridimencional
+            if (is3d == "S")
+            {
+                Console.WriteLine("Você está checando as colinearidade dos pontos: \n A({0},{1},{6}), B({2},{3},{7}), C({4},{5},{8})", x1, y1, x2, y2, x3, y3, z1, z2, z3);
+                Console.Write("\n Pressione qualquer tecla para Confirmar \n");
+                Console.ReadLine();
+
+                dPrin = (x1 * y2 * z3) + (y1 * z2 * x3) + (z1 * x2 * y3);
+                dSec = (y1 * x2 * z3) + (x1 * z2 * y3) + (z1 * y2 * x3);
+                determinant = dPrin - dSec;
+
+                if (determinant == 0)
+                {
+                    Console.WriteLine("Sim, os pontos são colineares");
+                    Console.Read();
+                }
+                else
+                {
+                    Console.WriteLine("Não, os pontos não são colineares");
+                    Console.Read();
+
+                }
+            }
+            else //aqui pra caso só tenhamos x e y
+            {
+                Console.WriteLine("Você está checando as colinearidade dos pontos: \n A({0},{1}), B({2},{3}), C({4},{5})", x1, y1, x2, y2, x3, y3);
+                Console.Write("\n Pressione qualquer tecla para Confirmar \n");
+                Console.ReadLine();
+
+                dPrin = (x1 * y2) + (y1 * x3) + (x2 * y3);
+                dSec = (y1 * x2) + (x1 * y3) + (y2 * x3);
+                determinant = dPrin - dSec;
+
+                if (determinant == 0)
+                {
+                    Console.WriteLine("Sim, os pontos são colineares");
+                    Console.Read();
+                }
+                else
+                {
+                    Console.WriteLine("Não, os pontos não são colineares");
+                    Console.Read();
+
+                }
+            }
+
+        }
+    }
+}
