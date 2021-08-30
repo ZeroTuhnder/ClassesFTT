@@ -1,0 +1,24 @@
+using System;
+
+namespace Aula2_3008_segundoProjeto
+{
+    class Exercicio1
+    {
+        static void Main(string[] args)
+        {
+            string nomeDoAluno;
+            double notaN1, notaN2, media;
+
+            Console.Write("Calculadora de média \nInsira seu nome: ");
+            nomeDoAluno = Console.ReadLine();
+            Console.Write("Insira a sua N1: ");
+            notaN1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Insira a sua N2: ");
+            notaN2 = Convert.ToDouble(Console.ReadLine());
+
+            media = notaN1 * 0.4 + notaN2 * 0.6;
+            Console.WriteLine("\nSua Media e: {0}", media);
+            Console.ReadKey();
+        }
+    }
+}
