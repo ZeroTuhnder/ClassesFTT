@@ -1,0 +1,46 @@
+using System;
+
+namespace Aula0109_ex09lista
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numeroDia;
+
+            Console.Write("Qual dia esta sendo considerado? ");
+            numeroDia = int.Parse(Console.ReadLine());
+
+            if (numeroDia == 1)
+            {
+                Console.WriteLine("Domingo");
+            }
+            else if (numeroDia == 2)
+            {
+                Console.WriteLine("Segunda");
+            }
+            else if (numeroDia == 3)
+            {
+                Console.WriteLine("Terca");
+            }
+            else if (numeroDia == 4)
+            {
+                Console.WriteLine("Quarta");
+            }
+            else if (numeroDia == 5)
+            {
+                Console.WriteLine("Quinta");
+            }
+            else if (numeroDia == 6)
+            {
+                Console.WriteLine("Sexta");
+            }
+            else if (numeroDia == 7)
+            {
+                Console.WriteLine("Sabado");
+            }
+            else
+                Console.WriteLine("Digite um dia da semana valido");
+        }
+    }
+}
