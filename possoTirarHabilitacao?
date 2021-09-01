@@ -1,0 +1,24 @@
+using System;
+
+namespace Aula3_0109
+{
+    class Operadores_Lógicos
+    {
+        static void Main(string[] args)
+        {
+            int idade;
+
+            Console.Write("Qual sua idade? ");
+            idade = int.Parse(Console.ReadLine());
+
+            if(idade >= 18)
+            {
+                Console.WriteLine("Parabens! Voce pode tirar sua Habilitacao");
+            }
+            else
+            {
+                Console.WriteLine("Aguarde mais um pouco");
+            }
+        }
+    }
+}
