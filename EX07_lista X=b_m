@@ -1,0 +1,26 @@
+using System;
+
+namespace Aula0109_ex07lista
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double x, b, m;
+            Console.Write("Divisão X = b/m \n qual o valor de b? ");
+            b = double.Parse(Console.ReadLine());
+            Console.Write("Qual o valor de m? ");
+            m = double.Parse(Console.ReadLine());
+
+            if(m == 0)
+            {
+                Console.WriteLine("Devido as regras matematicas, a divisao por 0 nao e possivel");
+            }
+            else
+            {
+                x = b / m;
+                Console.WriteLine("x = {0} / {1}, x = {2}", b, m, x);
+            }
+        }
+    }
+}
